@@ -10,6 +10,6 @@ import pandas as pd
 
 driver_path = "F:/Code/salary_predictor/chromedriver"
 
-df = gs.get_jobs("full-stack-developer", 4, True, driver_path)
+#gs.get_jobs("full-stack", 300, False, driver_path)
 
-df
+df = pd.read_csv('full-stack.csv')

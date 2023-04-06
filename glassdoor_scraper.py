@@ -27,7 +27,9 @@ def get_jobs(keyword, num_jobs, verbose, driver_path):
     driver.set_window_size(1120, 1000)
 
     
-    url = 'https://www.glassdoor.co.in/Job/india-' + keyword + '-jobs-SRCH_IL.0,5_IN115_KO6,26.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword=full&typedLocation=India&context=Jobs&dropdown=0'
+    #url = 'https://www.glassdoor.co.in/Job/india-' + keyword + '-jobs-SRCH_IL.0,5_IN115_KO6,26.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword=full&typedLocation=India&context=Jobs&dropdown=0'
+    #url = 'https://www.glassdoor.co.in/Job/india-full-stack-developer-jobs-SRCH_IL.0,5_IN115_KO6,26_IP16.htm?minRating=1.0&includeNoSalaryJobs=true&pgc=AB4AAYEAHgAAAAAAAAAAAAAAAf6711cARQEAAUpPhrIqlyl3%2FyKHZteqlVVKT%2F995OLc7X8%2BVV2T6ZPrl2BvENhyVySMU93yKOhoKvi9caXdbVmddubv6xVMkPXo4AAA'
+    url = 'https://www.glassdoor.co.in/Job/india-full-stack-engineer-jobs-SRCH_IL.0,5_IN115_KO6,25.htm?suggestCount=0&suggestChosen=false&clickSource=searchBtn&typedKeyword=full%2520stack%2520e&typedLocation=India&context=Jobs&dropdown=0'
     driver.get(url)
     jobs = []
 
@@ -233,6 +235,6 @@ def get_jobs(keyword, num_jobs, verbose, driver_path):
     
     df = pd.DataFrame(jobs)
     
-    df.to_csv('{}.csv'.format(keyword))
+    df.to_csv('{}_2_min_rating_1.csv'.format(keyword))
 
     return df

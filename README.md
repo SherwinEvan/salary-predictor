@@ -1,5 +1,5 @@
 # Data Science Salary Estimator: Project Overview 
-* Created a tool that estimates data science salaries (MAE ~ Rs. 11K) to help full stack developers negotiate their income when they get a job.
+* Created a tool that estimates data science salaries (MAE ~ Rs. 80K) to help full stack developers negotiate their income when they get a job.
 * Scraped 1200+ job descriptions from glassdoor using Python and Selenium.
 * Engineered features from the text of each job description to quantify the value companies put on TypeScript, React, Angular, Vue, SCSS/SASS,
   PHP, Laravel, WordPress, Ruby, Ruby on Rails, .NET, Node.Js, Spring, Spring Boot, MySQL, NoSQL, PostgreSQL, MongoDB, and Django. 
@@ -12,6 +12,7 @@
 **For Web Framework Requirements:**  ```pip install -r requirements.txt```  
 
 ## Web Scraping
+I bulit a python selenium web scraper as the ones available on the internet already did not work as they were outdated since GlassDoor updated their website.
 Web scraped 1200+ job postings from glassdoor.com. With each job, we got the following:
 *	Job title
 *	Salary Estimate
@@ -65,9 +66,10 @@ After scraping the data, I needed to clean it up so that it was usable for our m
 ## EDA
 I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables. 
 
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/salary_by_job_title.PNG "Salary by Position")
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/positions_by_state.png "Job Opportunities by State")
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/correlation_visual.png "Correlations")
+![alt text](https://github.com/SherwinEvan/salary-predictor/blob/78bd386ca4a0ebabbe7d4e6369f1fb90daf41e5f/Images/avg_sal_table.png)
+![alt text](https://github.com/SherwinEvan/salary-predictor/blob/78bd386ca4a0ebabbe7d4e6369f1fb90daf41e5f/Images/correlation.png)
+![alt text](https://github.com/SherwinEvan/salary-predictor/blob/78bd386ca4a0ebabbe7d4e6369f1fb90daf41e5f/Images/heatmap.png)
+![alt text](https://github.com/SherwinEvan/salary-predictor/blob/78bd386ca4a0ebabbe7d4e6369f1fb90daf41e5f/Images/location_graph.png)
 
 ## Model Building 
 
@@ -82,11 +84,11 @@ I tried three different models:
 
 ## Model performance
 The Random Forest model far outperformed the other approaches on the test and validation sets. 
-*	**Random Forest** : MAE = 11.22
-*	**Linear Regression**: MAE = 18.86
-*	**Ridge Regression**: MAE = 19.67
+*	**Linear Regression**: MAE = 4.02
+*	**Lasso Regression**: MAE = 3.23
+*	**Random Forest** : MAE = 0.80
 
 ## Productionization 
-In this step, I built a flask API endpoint that was hosted on a local webserver by following along with the TDS tutorial in the reference section above. The API endpoint takes in a request with a list of values from a job listing and returns an estimated salary. 
+In this step, I built a flask API endpoint that was hosted on a local webserver. The API endpoint takes in a request with a list of values from a job listing and returns an estimated salary. 
 
 

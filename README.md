@@ -1,5 +1,5 @@
-# Data Science Salary Estimator: Project Overview 
-* Created a tool that estimates data science salaries (MAE ~ Rs. 80K) to help full stack developers negotiate their income when they get a job.
+# Full Stack Developer Salary Estimator: Project Overview 
+* Created a tool that estimates full stack developer salaries (MAE ~ Rs. 80K) to help full stack developers negotiate their income when they get a job.
 * Scraped 1200+ job descriptions from glassdoor using Python and Selenium.
 * Engineered features from the text of each job description to quantify the value companies put on TypeScript, React, Angular, Vue, SCSS/SASS,
   PHP, Laravel, WordPress, Ruby, Ruby on Rails, .NET, Node.Js, Spring, Spring Boot, MySQL, NoSQL, PostgreSQL, MongoDB, and Django. 
